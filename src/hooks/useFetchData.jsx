@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import {token} from '../utils/config'
 
-const useFetchData = url => {
+const useFetchData = ({url}) => {
 
     const [data,setData] = useState([])
     const [loading, setLoading] = useState(false)

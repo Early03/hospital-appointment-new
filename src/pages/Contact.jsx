@@ -1,5 +1,3 @@
-import ServicesContent from "../components/ServicesContent"
-
 const Contact = () => {
   return (
   <section>
@@ -53,8 +51,6 @@ const Contact = () => {
         </button>
       </form>
     </div>
-
-    <ServicesContent/>
   </section>
   )
 }

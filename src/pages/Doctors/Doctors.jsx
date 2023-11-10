@@ -3,8 +3,11 @@ import { doctors } from '../../assets/data/doctors';
 import Testimonial from '../../components/Testimonial/Testimonial';
 import { BASE_URL } from '../../utils/config';
 import { useEffect, useState } from 'react';
+import '../../components/Doctors/doctor.css'
 
 const Doctors = () => {
+
+  //copy
 
   const [doctorArray, setDoctorArray] = useState([])
 
@@ -13,11 +16,14 @@ const Doctors = () => {
       const res = await fetch(`${BASE_URL}/doctors`)
       const data = await res.json()
       setDoctorArray(data.data)
+      console.log(data.data)
 
     } catch (error) {
       console.error('Error fetching doctor data', error)
     }
   }
+
+  //
 
   const handleSearch = async (value) => {
     value.preventDefault()
@@ -34,15 +40,16 @@ const Doctors = () => {
     }
   }
 
+  //copy
+
   useEffect(()=>{
     doctorData()
   }, [])
 
-  useEffect(()=>{
-    console.log(doctorArray)
-  }, [doctorArray])
 
+  //
   return <>
+  <div className='doctor-container'>
   <section className='bg-[#fff9ea]'>
     <div className='container text-center'>
       <h2 className='heading'>Find a Doctor</h2>
@@ -64,7 +71,7 @@ const Doctors = () => {
   </section>
 
   <section>
-    <div className="container">
+    <div className="container doctor-container">
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
           {doctorArray.map(doctor => (
             <DoctorCard key={doctor._id} doctor={doctor} />
@@ -86,7 +93,7 @@ const Doctors = () => {
         </div>
       </section>
   
-  
+  </div>
   </>
    
   

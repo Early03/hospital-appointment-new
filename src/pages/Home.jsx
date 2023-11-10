@@ -19,6 +19,9 @@ import Testimonial from '../components/Testimonial/Testimonial';
 
 
 const Home = () => {
+  
+
+
   return (
   <>
     {/*-------------------hero section-------------------*/}
